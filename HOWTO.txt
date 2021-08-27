@@ -1,5 +1,6 @@
-Per l'installazione dell'applicazione all'interno della directory contenente la cartella ProjectSDCC
-lanciare da terminale ProjectSDCC.py.
+Per l'installazione dell'applicazione all'interno della cartella scaricata da github contenente i 4 file(ProjectSDCC.py, HOWTO.txt, covidCell.jpg e RelazioneProjectSDCC)  
+lanciare da terminale ProjectSDCC.py 
+o aprire il file .py
 
 Se non presenti installare le libreria Python utilizzate per l'implementazione della GUI
 
