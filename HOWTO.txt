@@ -1,0 +1,23 @@
+Per l'installazione dell'applicazione all'interno della directory contenente la cartella ProjectSDCCGiuliaMenichini 
+lanciare da terminale ProjectSDCC.py.
+
+Se non presenti installare le libreria Python utilizzate per l'implementazione della GUI
+
+- Python Requests
+- Python Pillow
+- Python Tkinter
+
+tramite i comandi:
+
+pip install requests 
+
+pip install pillow
+
+In Python Tkinter è una libreria di default, durante l'installazione di Python è necessario 
+spuntare l'installazione di Tcl/Tk.
+
+Se non presente può essere installate con il comando:
+
+pip install tk
+
+
