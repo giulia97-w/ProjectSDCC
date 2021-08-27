@@ -1,4 +1,4 @@
-Per l'installazione dell'applicazione all'interno della directory contenente la cartella ProjectSDCCGiuliaMenichini 
+Per l'installazione dell'applicazione all'interno della directory contenente la cartella ProjectSDCC
 lanciare da terminale ProjectSDCC.py.
 
 Se non presenti installare le libreria Python utilizzate per l'implementazione della GUI
