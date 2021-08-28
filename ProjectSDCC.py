@@ -165,7 +165,7 @@ def createNewWindow():
             response = "Enter the vaccine batch"
         
         
-        textwidget = tk.Text(newWindow, height=3)
+        textwidget = tk.Text(newWindow, height=2)
         textwidget.insert(tk.END, response)
         textwidget.grid(row=23, column=0, sticky="WE", padx=300, pady=10)
 
@@ -189,7 +189,7 @@ def createNewWindow():
         else:
             response = "Enter the vaccine batch followed by the other informations that you want to change"
 
-        textwidget = tk.Text(newWindow, height = 3)
+        textwidget = tk.Text(newWindow, height = 2)
         textwidget.insert(tk.END, response)
         textwidget.grid(row=175, column=0, sticky="WE", padx=300, pady=10)
     
@@ -208,7 +208,7 @@ def scan_vax():
     
 
     
-    textwidget = tk.Text(height = 11)
+    textwidget = tk.Text(height = 7)
     textwidget.insert(tk.END, text_response)
     textwidget.grid(row=50, column=0, sticky="WE", padx=300, pady=10)
     
@@ -287,7 +287,7 @@ welcome_label.grid(row=0, column=0, sticky="WE", padx=300, pady=10)
 #Add buttons in the master window
 third_button = tk.Button(text="GET DATABASE INFORMATION", command= lambda: scan_vax(), font = 'Helvetica', bg = 'medium aquamarine', relief = RAISED, width=1,
                            height=1, activebackground='lightblue3', cursor = 'hand2', bd = 1)
-third_button.grid(row=41, column=0, pady=10, sticky="WE", padx = 600)
+third_button.grid(row=41, column=0, pady=10, sticky="WE", padx = 300)
 
 
 #The purpose of this widget is to display text, an image, or both. Generally the content is static, but your program can change the text or the image, in this case is static
@@ -332,7 +332,7 @@ fifth_inputE.insert  (END, '')
 fifth_inputE.grid(row=98, column=0, sticky="WE", padx=300) 
 fifth_button = tk.Button(text="ADD VACCINE", command=lambda : insert_vax(), font = 'Helvetica', bg = 'medium aquamarine', relief = RAISED, width=1,
                            height=1, activebackground='lightblue3', cursor = 'hand2', bd = 1)
-fifth_button.grid(row=300, column=0, sticky="WE", pady=5, padx=600)
+fifth_button.grid(row=250, column=0, sticky="WE", pady=5, padx=600)
 #Adding exit button
 exit_button = tk.Button(window, text = "EXIT", command=lambda : close(), bd=1, font='Helvetica', relief = RAISED, activebackground='lightblue3', cursor = 'hand2', bg = 'white')
 exit_button.grid( sticky='NE', padx= 60)
@@ -341,7 +341,7 @@ exit_button.grid( sticky='NE', padx= 60)
 buttonExample = tk.Button(window, 
               text="OTHER OPERATIONS",
               command=createNewWindow, bd=1, font='Helvetica', relief = RAISED, bg = 'medium aquamarine', activebackground='lightblue3', cursor = 'hand2')
-buttonExample.grid(  sticky='N')
+buttonExample.grid(row=270,  sticky='N')
 
 
 
