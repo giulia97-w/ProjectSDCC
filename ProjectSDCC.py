@@ -240,7 +240,7 @@ def insert_vax():
             }
         
     else:
-        text_response = "Enter the information about the vaccine you want to add"
+        response = "Enter the information about the vaccine you want to add"
 
     textwidget = tk.Text(height = 3)
     textwidget.insert(tk.END, response)
