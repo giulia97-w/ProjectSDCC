@@ -9,7 +9,6 @@ import datetime
 
 
 
-
 #creating tkinker window
 window = tk.Tk()
 #creating fixed geometry of the tkinker window 
@@ -20,6 +19,7 @@ window.title("COVID 19 VACCINE - MAIN INFORMATIONS ")
 window.grid_columnconfigure(0, weight=20)
 #configuration options
 window.configure(background = 'white')
+#Static window
 window.resizable(width=0, height=0)
 
 
@@ -52,7 +52,7 @@ def date(expire):
 
 
 
- #function to create a new window
+    #function to create a new window
 #Toplevel widgets work as windows that are directly managed by the window manager.
 def createNewWindow():
     newWindow = tk.Toplevel(window)
@@ -82,19 +82,18 @@ def createNewWindow():
     ttk.Label(newWindow, text= 'Enter the batch of the vaccine you want to search for:', font=('Helvetica', 14), background = 'medium aquamarine').grid(padx = 300, sticky="WE")
     #The Entry widget is used to accept single-line text strings from a user
     text_input = tk.Entry(newWindow, font=('Helvetica', 14))
-    #text_input.insert  (END, '')
     text_input.grid(row=2, column=0, sticky="WE", padx=300)
     #Add buttons
     download_button = tk.Button(newWindow, text="SEND", command=lambda : get_vax(), font = 'Helvetica', bg = 'medium aquamarine', relief = RAISED, width=1,
                                height=1, activebackground='lightblue3', cursor = 'hand2', bd = 1)
     download_button.grid(row=7, column=0, sticky="WE", pady=10, padx=300)
+    
     #The purpose of this widget is to display text, an image, or both. Generally the content is static, but your program can change the text or the image, in this case is static
     ttk.Label(newWindow, text= 'Enter the batch of the vaccine you want to delete:', font=('Helvetica', 14), background = 'medium aquamarine').grid(padx = 300, sticky="WE")
     
 
     #The Entry widget is used to accept single-line text strings from a user
     second_text_input = tk.Entry(newWindow, font=('Helvetica', 14))
-    #second_text_input.insert (END, '')
     second_text_input.grid(row=20, column = 0, sticky = "WE", padx  =300)
     #Add Buttons
     second_button = tk.Button(newWindow, text="DELETE VACCINE", command= lambda: delete_vax(), font = 'Helvetica', bg = 'medium aquamarine', relief = RAISED, width=1,
@@ -117,17 +116,7 @@ def createNewWindow():
     firth_inputC.insert  (END, '')
     firth_inputC.grid(row=120, column=0, sticky="WE", padx=300) 
     
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
+        
     firth_button = tk.Button(newWindow, text="UPDATE THE DEADLINE", command=lambda : update_vax(), font = 'Helvetica', bg = 'medium aquamarine', relief = RAISED,width=1,
                                height=1, activebackground='lightblue3', cursor = 'hand2', bd = 1)
     firth_button.grid(row=400, column=0, sticky="WE", pady=10, padx=300)
@@ -146,9 +135,7 @@ def createNewWindow():
             lotto =  user_input
             response = requests.get("https://soy1zqqas4.execute-api.us-east-1.amazonaws.com/prod1/getitem?lotto=" + lotto,
                                     params=lotto).json()
-            #response_json = json.dumps(response, indent=2)
-            
-            #text_response = response.text
+     
         else:
             response = "Enter the vaccine batch"
             
@@ -165,8 +152,7 @@ def createNewWindow():
             lotto =  user_input
             response = requests.get("https://soy1zqqas4.execute-api.us-east-1.amazonaws.com/prod1/deleteitem?lotto=" + lotto,
                                     params=lotto).json()
-            #response = json.dumps(response, indent=2)
-            #text_response1 = response1.text
+
         else:
             response = "Enter the vaccine batch"
         
@@ -186,14 +172,14 @@ def createNewWindow():
             numeroDosiPerVaccino = third_user_input
             if is_number(numeroDosiPerVaccino):
                 response = requests.get("https://soy1zqqas4.execute-api.us-east-1.amazonaws.com/prod1/updateitem?lotto=" + lotto +  "&numeroDosiPerVaccino=" + numeroDosiPerVaccino , params=lotto).json()
-                #response = json.dumps(response, indent=2)
+               
             else: 
                 response =  {
                     "number of doses for vaccine must be an integer" }
                 
                    
         else:
-            response = "Enter the vaccine batch followed by the other informations that you want to change"
+            response = "Enter the vaccine batch followed by the information that you want to change"
 
         textwidget = tk.Text(newWindow, height = 2)
         textwidget.insert(tk.END, response)
@@ -210,7 +196,7 @@ def scan_vax():
     #json.dumps: Serialize obj to a JSON formatted str using a conversion table.
     text_response = json.dumps(response, indent=6)
     
-    #text_response2 = response2.text
+    
     
 
     
@@ -238,8 +224,7 @@ def insert_vax():
         numeroDosiPerVaccino = user_input7
         if date(scadenza) and is_number(numeroDosiPerVaccino):
             response = requests.get("https://soy1zqqas4.execute-api.us-east-1.amazonaws.com/prod1/insertvax?lotto=" + lotto + "&nomeVaccino=" + nomeVaccino + "&casaFarmaceutica=" + casaFarmaceutica + "&numeroDosiPerVaccino=" + numeroDosiPerVaccino + "&scadenza=" + scadenza, params=lotto).json()
-            #text_response = response.text
-            #text_response = json.dumps(response, indent = 0)
+
         else:
             response = {
              "Invalid Date or number of doses for vaccine: Date must be in format dd/mm/yyyy and the number of doses must be an integer",
@@ -300,7 +285,7 @@ third_button.grid(row=41, column=0, pady=10, sticky="WE", padx = 300)
 ttk.Label(window, text= 'Enter batch:', font=('Century Schoolbook bold', 14), background = 'medium aquamarine').grid(padx = 300, sticky="WE", row = 80)
 
 
-##The Entry widget is used to accept single-line text strings from a user
+#The Entry widget is used to accept single-line text strings from a user
 fifth_input = tk.Entry(font=('', 14))
 fifth_input.insert(END, '')
 fifth_input.grid(row=90, column=0, sticky="WE", padx=300) 
