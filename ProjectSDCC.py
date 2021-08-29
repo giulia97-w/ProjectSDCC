@@ -7,16 +7,20 @@ import json #JSON module for converting the datastructures to JSON strings
 import datetime
 #Tkinker is a python module used to develop GUI (Graphical User Interface) applications
 
+
+
+
 #creating tkinker window
 window = tk.Tk()
 #creating fixed geometry of the tkinker window 
-window.geometry("1600x900")
+window.geometry("1300x900")
 #creating the title of the window
 window.title("COVID 19 VACCINE - MAIN INFORMATIONS ")
 #grid lets you layout widgets in columns and rows
 window.grid_columnconfigure(0, weight=20)
 #configuration options
 window.configure(background = 'white')
+window.resizable(width=0, height=0)
 
 
 #opening the image
@@ -52,8 +56,9 @@ def date(expire):
 #Toplevel widgets work as windows that are directly managed by the window manager.
 def createNewWindow():
     newWindow = tk.Toplevel(window)
+    newWindow.resizable(width=0, height=0)
     labelExample = tk.Label(newWindow, text = "COVID 19 VACCINE")
-    newWindow.geometry("1600x900")
+    newWindow.geometry("1300x900")
     newWindow.grid_columnconfigure(0, weight=20)
     labelExample.grid()
     buttonExample.grid()
@@ -130,6 +135,7 @@ def createNewWindow():
     
     exit_button = tk.Button(newWindow, text = "EXIT", command=lambda : close(), font='Helvetica', relief = RAISED, activebackground='lightblue3', cursor = 'hand2', bg = 'white', bd = 1)
     exit_button.grid( sticky='NE', row = 450, padx = 60)
+    exit_button.place(relx=0.93, rely=0.01, relwidth=0.05, relheight=0.05)
     
 
 
@@ -275,7 +281,7 @@ def text_parsing(text_response):
 
 welcome_label = tk.Label(window,
                             text="COVID 19 VACCINE",
-                                    font=("Helvetica", 32), bg='medium aquamarine', fg = 'black')
+                                    font=("Helvetica", 30), bg='medium aquamarine', fg = 'black')
 welcome_label.grid(row=0, column=0, sticky="WE", padx=300, pady=10)
 
 
@@ -332,17 +338,18 @@ fifth_inputE.insert  (END, '')
 fifth_inputE.grid(row=98, column=0, sticky="WE", padx=300) 
 fifth_button = tk.Button(text="ADD VACCINE", command=lambda : insert_vax(), font = 'Helvetica', bg = 'medium aquamarine', relief = RAISED, width=1,
                            height=1, activebackground='lightblue3', cursor = 'hand2', bd = 1)
-fifth_button.grid(row=250, column=0, sticky="WE", pady=5, padx=600)
+fifth_button.grid(row=250, column=0, sticky="WE", pady=5, padx=300)
 #Adding exit button
 exit_button = tk.Button(window, text = "EXIT", command=lambda : close(), bd=1, font='Helvetica', relief = RAISED, activebackground='lightblue3', cursor = 'hand2', bg = 'white')
 exit_button.grid( sticky='NE', padx= 60)
+exit_button.place(relx=0.93, rely=0.01, relwidth=0.05, relheight=0.05)
 
 #Adding "OTHER OPERATION' button in the master window
 buttonExample = tk.Button(window, 
               text="OTHER OPERATIONS",
               command=createNewWindow, bd=1, font='Helvetica', relief = RAISED, bg = 'medium aquamarine', activebackground='lightblue3', cursor = 'hand2')
 buttonExample.grid(row=270,  sticky='N')
-
+buttonExample.place(relx=0.81, rely=0.67)
 
 
 
