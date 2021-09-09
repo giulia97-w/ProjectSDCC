@@ -180,7 +180,7 @@ def createNewWindow():
     firth_inputC.grid(row=120, column=0, sticky="WE", padx=300) 
     
     #UPDATE BUTTON   
-    firth_button = tk.Button(newWindow, text="UPDATE THE DEADLINE", command=lambda : update_vax(), font = ('Helvetica',12), bg = 'medium aquamarine', relief = RAISED,width=1,
+    firth_button = tk.Button(newWindow, text="UPDATE", command=lambda : update_vax(), font = ('Helvetica',12), bg = 'medium aquamarine', relief = RAISED,width=1,
                                height=1, activebackground='lightblue3', cursor = 'hand2', bd = 1)
     firth_button.grid(row=400, column=0, sticky="WE", pady=10, padx=300)
     
